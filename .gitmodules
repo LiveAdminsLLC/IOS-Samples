@@ -1,0 +1,3 @@
+[submodule "WGSDK"]
+	path = WGSDK
+	url = https://github.com/LiveAdminsLLC/IOSFrameworks.git
