@@ -1,0 +1,6 @@
+framework module WGVisitor {
+  umbrella header "WGVisitor-umbrella.h"
+
+  export *
+  module * { export * }
+}

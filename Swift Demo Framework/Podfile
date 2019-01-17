@@ -1,0 +1,26 @@
+workspace 'WGVisitorDemo IOS'
+platform :ios, '8.0'
+
+#inhibit_all_warnings!
+
+
+
+source 'https://bitbucket.org/maavratechapps/privatepods'
+source 'https://github.com/CocoaPods/Specs.git'
+
+project 'Demo'
+
+target "Demo" do
+    
+use_frameworks!
+
+
+pod 'WGVisitorSDK', :path => '../WGSDK/'
+
+
+
+pod 'Fabric'
+pod 'Crashlytics'
+
+
+end
