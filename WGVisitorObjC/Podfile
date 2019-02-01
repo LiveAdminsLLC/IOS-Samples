@@ -1,0 +1,35 @@
+workspace 'WGVisitorDemo IOS'
+platform :ios, '8.0'
+
+#inhibit_all_warnings!
+
+use_frameworks!
+
+source 'https://github.com/LiveAdminsLLC/PodSpecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+project 'DemoProject'
+
+target "DemoObjc" do
+
+#pod "MWPhotoBrowser"
+
+
+
+pod 'WGVisitorSDK', :path => '../WGSDK/'
+
+
+
+pod 'Fabric'
+pod 'Crashlytics'
+
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
+
+end
