@@ -48,11 +48,13 @@
     
     
     
-    [WGVisitorViewController setDomainForEnglish:@"thelivechatsoftware.com/les/chats/test20"];//Set your domain here for english version
+    [WGVisitorViewController setDomainForEnglish:@"thelivechatsoftware.com/les/chats/test6"];
     
-    [WGVisitorViewController setDomainForArabic:@"thelivechatsoftware.com/les/chats/test20"]; //Set your domain here for arabic version
+    [WGVisitorViewController setDomainForArabic:@"thelivechatsoftware.com/les/chats/test6"];
     
     //[WGVisitorViewController setVisitorName:@"Michael" phoneNumber:@"0099933333" email:@"michael@test.com"];
+    [WGVisitorViewController shouldShowChatHead:false];
+    [WGVisitorViewController chatHeadColour:[UIColor darkGrayColor]];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
     

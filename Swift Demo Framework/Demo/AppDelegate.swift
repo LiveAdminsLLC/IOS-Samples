@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         WGVisitorViewController.setPreferredLanguage("en");
-        WGVisitorViewController.setDomainForEnglish("thelivechatsoftware.com/les/chats/test5")
+        WGVisitorViewController.setDomainForEnglish("thelivechatsoftware.com/les/chats/test20")
         WGVisitorViewController.shouldShowChatHead(false)
         
         WGVisitorViewController.chatHeadColour( UIColor.darkGray)
