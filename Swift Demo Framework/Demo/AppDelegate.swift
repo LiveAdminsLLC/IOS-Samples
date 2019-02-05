@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import WGVisitor
-import WGVisitorCore
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        WGVisitorViewController.setPreferredLanguage("en");
-        WGVisitorViewController.setDomainForEnglish("thelivechatsoftware.com/les/chats/test20")
+        let language = "en";
+        
+        if language == "ar"
+        {
+            
+            WGVisitorViewController.setPreferredLanguage("ar");
+        }
+        else
+        {
+            
+            WGVisitorViewController.setPreferredLanguage("en");
+        }
+        
+        WGVisitorViewController.setDomainForEnglish("thelivechatsoftware.com/les/chats/test6")
+        WGVisitorViewController.setDomainForArabic("thelivechatsoftware.com/les/chats/test6")
         WGVisitorViewController.shouldShowChatHead(false)
         
         WGVisitorViewController.chatHeadColour( UIColor.darkGray)
@@ -50,8 +63,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-//        self.saveContext()
+//        self.saveContext()ß
     }
+    
+    // MARK: - Core Data stack
+    
+  
+    // MARK: - Core Data Saving support
     
    
     

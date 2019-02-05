@@ -12,16 +12,14 @@ import MCLocalization
 
 class ViewController: WGVisitorViewController {
     
-    var visitorController:WGVisitorViewController?;
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         //self.visitorController = WGVisitorViewController();
+
         let closeBtn = UIBarButtonItem(title: "Close", style: .plain, target: self, action: nil)
-//        if self.tabBarController != nil {
-//            self.tabBarController?.navigationItem.rightBarButtonItem = closeBtn
-//        }
+        if self.tabBarController != nil {
+            self.tabBarController?.navigationItem.rightBarButtonItem = closeBtn
+        }
         self.addTargetSessionClosed(forBarButton: closeBtn) { (sessionStatus) in
             self.handleSessionStatus(sessionStatus: sessionStatus);
             

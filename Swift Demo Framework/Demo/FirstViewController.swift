@@ -16,7 +16,6 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +38,18 @@ class FirstViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    
+
+    @IBAction func showLanguageSelectVC(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LanguageSelectionController")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
     
 
 }
