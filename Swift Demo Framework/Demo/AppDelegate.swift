@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import WGVisitor
-
+import WGVisitorCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,26 +17,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let language = "en";
+        WGVisitorViewController.setPreferredLanguage("en");
         
-        if language == "ar"
-        {
+        
+        let chatConfigurations =    [ "en":[
+            "PrivacyLink": "https://www.eaglehills.com/privacy-policy/",
+            "DomainNameLink": "thelivechatsoftware.com/les/chats/test6",
+            "RTL": false ,
+            "ApplicationName": "Eagle Hills"
+            ],
+                                      
+                                      "ar":[
+                                        
+                                        "PrivacyLink": "https://www.eaglehills.com/ar/privacy-policy/",
+                                        "DomainNameLink": "thelivechatsoftware.com/les/chats/test6",
+                                        "RTL": true,
+                                        "ApplicationName" : " إيجل هيلز"
+            ]
             
-            WGVisitorViewController.setPreferredLanguage("ar");
-        }
-        else
-        {
-            
-            WGVisitorViewController.setPreferredLanguage("en");
-        }
+        ]
+           WGVisitorViewController.setChatConfigurations( chatConfigurations);
         
-        WGVisitorViewController.setDomainForEnglish("thelivechatsoftware.com/les/chats/test6")
-        WGVisitorViewController.setDomainForArabic("thelivechatsoftware.com/les/chats/test6")
+        
+        let themeConfigurations = [
+            
+            "ThemeColor": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+            
+            "ChatHeadColour": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+            
+            "NavigationLogo": UIImage.init(imageLiteralResourceName: "logo"),
+            
+            "AgentMessage":[
+                
+                "backgroundColor": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+                "textColor": UIColor.white,
+                "avatar" : UIImage.init(imageLiteralResourceName: "logo_for_agent")
+                //
+            ],
+            
+            "VisitorMessage":[
+                
+                //                "backgroundColor": UIColor.lightGray,
+                "textColor": UIColor.darkText,
+                
+                //                "avatar" : UIImage.init(imageLiteralResourceName: "eaglehills_logo_for_chat")
+                
+            ]
+            
+            ] as [String : Any]
+        
+    
+        WGVisitorViewController.setThemeConfigurations( themeConfigurations);
+        
+        WGVisitorViewController.shouldShowTimeStamp ( true)
+        
         WGVisitorViewController.shouldShowChatHead(false)
         
-        WGVisitorViewController.chatHeadColour( UIColor.darkGray)
+        
+        WGVisitorViewController.setVisitorName("Michael", phoneNumber: "12345678", email: "michael@test.com")
+        
         
         // Override point for customization after application launch.
         return true
@@ -63,13 +104,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-//        self.saveContext()ß
+//        self.saveContext()
     }
-    
-    // MARK: - Core Data stack
-    
-  
-    // MARK: - Core Data Saving support
     
    
     

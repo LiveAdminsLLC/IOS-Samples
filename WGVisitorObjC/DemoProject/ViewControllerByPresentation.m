@@ -35,11 +35,9 @@
 {
     [super viewDidLoad];
     
-    BOOL isHTTPSession=NO;
     
    self.visitorControlelr = [WGVisitorViewController new];
     
-    self.visitorControlelr.isHTTPSession = isHTTPSession;
     
     UIButton * simpleButton = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
 

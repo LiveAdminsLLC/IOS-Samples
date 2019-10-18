@@ -98,7 +98,7 @@
     
     selecteRow=indexPath.row;
     
-    NSString * language = [SharedData getSharedInstance].selectedLanguage;
+    NSString * language = [WGVisitorSharedData getSharedInstance].selectedLanguage;
     
     if ([language isEqualToString:@"ar"]&&selecteRow==0) {
         

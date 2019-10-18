@@ -125,7 +125,6 @@
        
         UITabBarController * tabBar = segue.destinationViewController;
         WGVisitorViewController * visitor = [tabBar.viewControllers firstObject];
-        visitor.isHTTPSession=isHTTPSession;
 
          UIBarButtonItem * bt = [[UIBarButtonItem alloc]initWithTitle:[MCLocalization stringForKey:@"Close"] style:UIBarButtonItemStyleDone target:nil action:nil];
         
@@ -148,7 +147,6 @@
     {
         WGVisitorViewController *visitor = segue.destinationViewController;
 
-        visitor.isHTTPSession=isHTTPSession;
         
         UIBarButtonItem * bt = [[UIBarButtonItem alloc]initWithTitle:[MCLocalization stringForKey:@"Close"] style:(UIBarButtonItemStyleDone) target:nil action:nil];
         

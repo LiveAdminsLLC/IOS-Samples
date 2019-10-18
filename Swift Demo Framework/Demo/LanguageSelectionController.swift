@@ -44,7 +44,7 @@ class LanguageSelectionController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedRow = indexPath.row
-        let language = SharedData.getSharedInstance().selectedLanguage
+        let language = WGVisitorSharedData.getSharedInstance().selectedLanguage
 
         if language == "ar" && selectedRow == 0{
             WGVisitorViewController.setPreferredLanguage("en");

@@ -47,13 +47,11 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    BOOL isHTTPSession=NO;
     
     [self.closeButton setTitle:[MCLocalization stringForKey:@"Close"] forState:(UIControlStateNormal)];
     
     self.visitorController = [[WGVisitorViewController alloc]init];
 
-    self.visitorController.isHTTPSession=isHTTPSession;
     
     __weak typeof(self) weakSelf = self;
     

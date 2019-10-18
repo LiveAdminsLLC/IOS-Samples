@@ -17,6 +17,8 @@ use_frameworks!
 
 pod 'WGVisitorSDK', :path => '../WGSDK/'
 
+pod 'SignalR-ObjC', :path => '../WGSDK/SignalR-ObjC/'
+
 
 
 

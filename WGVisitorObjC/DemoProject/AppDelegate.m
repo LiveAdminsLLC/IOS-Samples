@@ -33,8 +33,6 @@
     [Fabric with:@[[Crashlytics class]]];
     
     
-    
-    
     NSString * language = @"en";
     
     if ([language isEqualToString:@"ar"])
@@ -48,15 +46,71 @@
     
     
     
-    [WGVisitorViewController setDomainForEnglish:@"thelivechatsoftware.com/les/chats/test6"];
     
-    [WGVisitorViewController setDomainForArabic:@"thelivechatsoftware.com/les/chats/test6"];
+    NSDictionary* chatConfigurations =    @{ @"en":@{
+                                        @"PrivacyLink": @"https://www.eaglehills.com/privacy-policy/",
+                                        @"DomainNameLink": @"thelivechatsoftware.com/les/chats/test6",
+                                        @"RTL": @(NO) ,
+                                        @"ApplicationName": @"Eagle Hills"
+                                        },
+                                 
+                                             @"ar":@{
+                                       
+                                       @"PrivacyLink": @"https://www.eaglehills.com/ar/privacy-policy/",
+                                       @"DomainNameLink": @"thelivechatsoftware.com/les/chats/test6",
+                                       @"RTL": @(YES),
+                                       @"ApplicationName" : @" إيجل هيلز"
+                                       }
+                                 
+                                             };
     
-    //[WGVisitorViewController setVisitorName:@"Michael" phoneNumber:@"0099933333" email:@"michael@test.com"];
-    [WGVisitorViewController shouldShowChatHead:false];
-    [WGVisitorViewController chatHeadColour:[UIColor darkGrayColor]];
+    [WGVisitorViewController setChatConfigurations:chatConfigurations];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSDictionary* themeConfigurations = @{
+                               
+                                          
+                                          
+                               @"ThemeColor": [UIColor colorWithRed:32/2555.0 green:42/2555.0 blue:69/2555.0 alpha:1],
+                               
+                               @"ChatHeadColour": [UIColor colorWithRed:32/2555.0 green:42/2555.0 blue:69/2555.0 alpha:1],
+                               
+                               @"NavigationLogo":
+                                   [UIImage imageNamed:@"logo"],
+                               
+                               
+                               @"AgentMessage":@{
+                                               
+                                               @"backgroundColor":[UIColor colorWithRed:32/2555.0 green:42/2555.0 blue:69/2555.0 alpha:1],
+                                               @"textColor": [UIColor  whiteColor],
+                                               @"avatar" :
+                                                    [UIImage imageNamed:@"logo_for_agent"],
+                                               //
+                                               },
+                               
+                               @"VisitorMessage":@{
+                                                 
+                                                 //                "backgroundColor": UIColor.lightGray,
+                                                 @"textColor": [UIColor whiteColor]
+                                                 
+                                                 //                "avatar" : UIImage.init(imageLiteralResourceName: "eaglehills_logo_for_chat")
+                                                 
+                                                 }
+                               
+                               };
+    
+  
+    
+    [WGVisitorViewController setThemeConfigurations:themeConfigurations];
+    
+    [WGVisitorViewController shouldShowChatHead:YES];
+    [WGVisitorViewController shouldShowTimeStamp:YES];
+    
+    
+    [WGVisitorViewController setVisitorName:@"Michael" phoneNumber:@"12345678" email:@"michael@test.com"];
+    
+    
+    
     
     //[[ChatHeadManager sharedInstance] setupWithWindow:self.window chDraggingCoordinatorDelegate:self];
     

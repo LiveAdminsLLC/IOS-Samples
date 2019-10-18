@@ -119,7 +119,6 @@ UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBar
     
     self.visitor = [[WGVisitorViewController alloc]init];
     
-    self.visitor.isHTTPSession=isHTTPSession;
     
     
         [self.navigationController popToRootViewControllerAnimated:NO];
@@ -144,7 +143,6 @@ UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBar
         UINavigationController *nav = [tabBar.viewControllers objectAtIndex:1];
         WGVisitorViewController * wg = [nav.viewControllers firstObject];
         
-        wg.isHTTPSession=isHTTPSession;
         
         UIBarButtonItem * barButton = [[UIBarButtonItem alloc]initWithTitle:[MCLocalization stringForKey:@"Close"] style:(UIBarButtonItemStyleDone) target:nil action:nil];
         wg.navigationItem.rightBarButtonItem = barButton;
@@ -168,7 +166,6 @@ UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBar
         
         WGVisitorViewController * wgVisitorViewController = self.visitor;
         
-        wgVisitorViewController.isHTTPSession=isHTTPSession;
 
         
         UIBarButtonItem * barButton = [[UIBarButtonItem alloc]initWithTitle:[MCLocalization stringForKey:@"Close"] style:(UIBarButtonItemStyleDone) target:nil action:nil];

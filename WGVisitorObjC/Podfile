@@ -15,9 +15,13 @@ target "DemoObjc" do
 #pod "MWPhotoBrowser"
 
 
+pod  'AFNetworking', '~>3.0'
 
 pod 'WGVisitorSDK', :path => '../WGSDK/'
 
+pod 'SignalR-ObjC', :path => '../WGSDK/SignalR-ObjC/'
+
+#pod 'SignalR-ObjC', :git => 'https://github.com/DyKnow/SignalR-ObjC', :branch => 'feature-afnetworking3.x'
 
 
 pod 'Fabric'
