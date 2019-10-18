@@ -15,7 +15,9 @@ target "DemoSwift" do
 use_frameworks!
 
 
-pod 'WGVisitorSDK', :path => '../WGSDK/'
+pod 'WGVisitorSDK', :path => '../../WGSDK/'
+
+pod 'SignalR-ObjC', :path => '../../SignalR-ObjC/'
 
 
 

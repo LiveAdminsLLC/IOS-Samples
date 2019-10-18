@@ -13,21 +13,37 @@ import MCLocalization
 class ViewController: WGVisitorViewController {
     
     var visitorController:WGVisitorViewController?;
-    
+  
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         
-         //self.visitorController = WGVisitorViewController();
-        let closeBtn = UIBarButtonItem(title: "Close", style: .plain, target: self, action: nil)
-//        if self.tabBarController != nil {
-//            self.tabBarController?.navigationItem.rightBarButtonItem = closeBtn
-//        }
+        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.navigationController?.navigationBar.barTintColor = WGVisitorSharedData.getSharedInstance().themeColor()
+        
+        
+        
+        let closeBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: nil)
+        //        let closeBtn = UIBarButtonItem(title: "Close", style: .plain, target: self, action: nil)
+        if self.tabBarController != nil {
+            self.tabBarController?.navigationItem.rightBarButtonItem = closeBtn
+        }
         self.addTargetSessionClosed(forBarButton: closeBtn) { (sessionStatus) in
             self.handleSessionStatus(sessionStatus: sessionStatus);
             
         }
         
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,6 +88,14 @@ class ViewController: WGVisitorViewController {
 
             self.showAlert(withTitle: "Error", message: "Network error")
             // Call to webserver failed
+            
+            break;
+            
+        case WGVisitorStatus.REJECT_TERMS:
+            
+            self.showAlert(withTitle: "Error", message: "User Rejected your terms")
+            
+            //            navigationController?.popViewController(animated: true)
             
             break;
         case WGVisitorStatus.USER_BLOCKED:

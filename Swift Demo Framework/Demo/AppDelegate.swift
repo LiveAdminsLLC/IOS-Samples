@@ -17,13 +17,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         WGVisitorViewController.setPreferredLanguage("en");
-        WGVisitorViewController.setDomainForEnglish("thelivechatsoftware.com/les/chats/test5")
+        
+        
+        let chatConfigurations =    [ "en":[
+            "PrivacyLink": "https://www.eaglehills.com/privacy-policy/",
+            "DomainNameLink": "thelivechatsoftware.com/les/chats/test6",
+            "RTL": false ,
+            "ApplicationName": "Eagle Hills"
+            ],
+                                      
+                                      "ar":[
+                                        
+                                        "PrivacyLink": "https://www.eaglehills.com/ar/privacy-policy/",
+                                        "DomainNameLink": "thelivechatsoftware.com/les/chats/test6",
+                                        "RTL": true,
+                                        "ApplicationName" : " إيجل هيلز"
+            ]
+            
+        ]
+           WGVisitorViewController.setChatConfigurations( chatConfigurations);
+        
+        
+        let themeConfigurations = [
+            
+            "ThemeColor": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+            
+            "ChatHeadColour": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+            
+            "NavigationLogo": UIImage.init(imageLiteralResourceName: "logo"),
+            
+            "AgentMessage":[
+                
+                "backgroundColor": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+                "textColor": UIColor.white,
+                "avatar" : UIImage.init(imageLiteralResourceName: "logo_for_agent")
+                //
+            ],
+            
+            "VisitorMessage":[
+                
+                //                "backgroundColor": UIColor.lightGray,
+                "textColor": UIColor.darkText,
+                
+                //                "avatar" : UIImage.init(imageLiteralResourceName: "eaglehills_logo_for_chat")
+                
+            ]
+            
+            ] as [String : Any]
+        
+    
+        WGVisitorViewController.setThemeConfigurations( themeConfigurations);
+        
+        WGVisitorViewController.shouldShowTimeStamp ( true)
+        
         WGVisitorViewController.shouldShowChatHead(false)
         
-        WGVisitorViewController.chatHeadColour( UIColor.darkGray)
+        
+        WGVisitorViewController.setVisitorName("Michael", phoneNumber: "12345678", email: "michael@test.com")
+        
         
         // Override point for customization after application launch.
         return true
