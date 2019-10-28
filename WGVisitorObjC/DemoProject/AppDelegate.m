@@ -71,9 +71,9 @@
                                
                                           
                                           
-                               @"ThemeColor": [UIColor colorWithRed:32/2555.0 green:42/2555.0 blue:69/2555.0 alpha:1],
+                               @"ThemeColor": [UIColor colorWithRed:32/255.0 green:42/255.0 blue:69/255.0 alpha:1],
                                
-                               @"ChatHeadColour": [UIColor colorWithRed:32/2555.0 green:42/2555.0 blue:69/2555.0 alpha:1],
+                               @"ChatHeadColour": [UIColor colorWithRed:32/255.0 green:42/255.0 blue:69/255.0 alpha:1],
                                
                                @"NavigationLogo":
                                    [UIImage imageNamed:@"logo"],
@@ -81,17 +81,21 @@
                                
                                @"AgentMessage":@{
                                                
-                                               @"backgroundColor":[UIColor colorWithRed:32/2555.0 green:42/2555.0 blue:69/2555.0 alpha:1],
+                                               @"backgroundColor":[UIColor colorWithRed:32/255.0 green:42/255.0 blue:69/255.0 alpha:1],
                                                @"textColor": [UIColor  whiteColor],
+                                               @"linkTextColor": [UIColor yellowColor],
                                                @"avatar" :
                                                     [UIImage imageNamed:@"logo_for_agent"],
                                                //
                                                },
                                
                                @"VisitorMessage":@{
-                                                 
-                                                 //                "backgroundColor": UIColor.lightGray,
-                                                 @"textColor": [UIColor whiteColor]
+                                       
+                                       
+                                       @"backgroundColor": [UIColor colorWithHue:240.0 / 360.0 saturation:0.02 brightness:0.92 alpha:1.0],
+                                       
+                                       @"textColor": [UIColor darkTextColor],
+                                       @"linkTextColor": [UIColor blueColor],
                                                  
                                                  //                "avatar" : UIImage.init(imageLiteralResourceName: "eaglehills_logo_for_chat")
                                                  

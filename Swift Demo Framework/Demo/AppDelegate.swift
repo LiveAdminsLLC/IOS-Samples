@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let chatConfigurations =    [ "en":[
-            "PrivacyLink": "https://www.eaglehills.com/privacy-policy/",
+//            "PrivacyLink": "https://www.eaglehills.com/privacy-policy/",
             "DomainNameLink": "thelivechatsoftware.com/les/chats/test6",
             "RTL": false ,
             "ApplicationName": "Eagle Hills"
@@ -43,24 +43,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let themeConfigurations = [
             
-            "ThemeColor": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+            "ThemeColor": UIColor.init( red:32/255.0, green:42/255.0 ,blue:69/255.0 ,alpha:1),
             
-            "ChatHeadColour": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+            "ChatHeadColour": UIColor.init( red:32/255.0, green:42/255.0 ,blue:69/255.0 ,alpha:1),
             
             "NavigationLogo": UIImage.init(imageLiteralResourceName: "logo"),
             
             "AgentMessage":[
                 
-                "backgroundColor": UIColor.init( red:32/2555.0, green:42/2555.0 ,blue:69/2555.0 ,alpha:1),
+                "backgroundColor": UIColor.init( red:32/255.0, green:42/255.0 ,blue:69/255.0 ,alpha:1),
                 "textColor": UIColor.white,
+                "linkTextColor": UIColor.yellow,
+                
                 "avatar" : UIImage.init(imageLiteralResourceName: "logo_for_agent")
                 //
             ],
             
             "VisitorMessage":[
                 
-                //                "backgroundColor": UIColor.lightGray,
+                "backgroundColor": UIColor.init(hue: 240.0 / 360.0, saturation: 0.02, brightness: 0.92, alpha: 1.0),
+                
                 "textColor": UIColor.darkText,
+                "linkTextColor": UIColor.blue,
                 
                 //                "avatar" : UIImage.init(imageLiteralResourceName: "eaglehills_logo_for_chat")
                 
