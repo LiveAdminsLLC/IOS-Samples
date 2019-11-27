@@ -23,18 +23,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let chatConfigurations =    [ "en":[
-//            "PrivacyLink": "https://www.eaglehills.com/privacy-policy/",
-            "DomainNameLink": "thelivechatsoftware.com/les/chats/test6",
+
+            "PrivacyLink": "https://www.example.com/privacy-policy/",
+             
+            "DomainNameLink": "thelivechatsoftware.com/les/chats/test7",
             "RTL": false ,
-            "ApplicationName": "Eagle Hills"
+            "ApplicationName": "Set Application Name Here"
             ],
                                       
                                       "ar":[
                                         
-                                        "PrivacyLink": "https://www.eaglehills.com/ar/privacy-policy/",
-                                        "DomainNameLink": "thelivechatsoftware.com/les/chats/test6",
+                                        "PrivacyLink": "https://example.com/ar/privacy-policy/",
+                                         
+                                        "DomainNameLink": "thelivechatsoftware.com/les/chats/test7",
                                         "RTL": true,
-                                        "ApplicationName" : " إيجل هيلز"
+                                        "ApplicationName" : "Set Application Name Here"
             ]
             
         ]
@@ -66,7 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 "textColor": UIColor.darkText,
                 "linkTextColor": UIColor.blue,
                 
-                //                "avatar" : UIImage.init(imageLiteralResourceName: "eaglehills_logo_for_chat")
                 
             ]
             
