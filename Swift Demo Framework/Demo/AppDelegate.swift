@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             "PrivacyLink": "https://www.example.com/privacy-policy/",
              
-            "DomainNameLink": "thelivechatsoftware.com/les/chats/test7",
+            "DomainNameLink": "appingage.liveadmins.com/en",
             "RTL": false ,
             "ApplicationName": "Set Application Name Here"
             ],
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                         
                                         "PrivacyLink": "https://example.com/ar/privacy-policy/",
                                          
-                                        "DomainNameLink": "thelivechatsoftware.com/les/chats/test7",
+                                        "DomainNameLink": "appingage.liveadmins.com/ar",
                                         "RTL": true,
                                         "ApplicationName" : "Set Application Name Here"
             ]
